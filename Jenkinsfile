@@ -4,12 +4,16 @@ pipeline {
             label "ROBOSHOP"
         }
     }
+    environment {
+        COURSE = "DevOps with AWS"
+    }
     stages {
         stage("Build") {
             steps {
                 script{
                     sh """
                         echo "Building..."
+                        echo "Course name is ${COURSE}"
                     """
                 }
             }
