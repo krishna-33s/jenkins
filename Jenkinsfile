@@ -1,6 +1,10 @@
-pipeline{
-    agent any
-    stages{
+pipeline {
+    agent {
+        node {
+            label "ROBOSHOP"
+        }
+    }
+    stages {
         stage("Build") {
             steps {
                 script{
@@ -19,7 +23,7 @@ pipeline{
                 }
             }
         }
-        stage("Deploy"){
+        stage("Deploy") {
             steps{
                 script{
                     sh """
