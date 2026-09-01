@@ -7,6 +7,9 @@ pipeline {
     environment {
         COURSE = "DevOps with AWS"
     }
+    options {
+        disableConcurrentBuilds()
+    }
     stages {
         stage("Build") {
             steps {
@@ -14,6 +17,7 @@ pipeline {
                     sh """
                         echo "Building..."
                         echo "Course name is ${COURSE}"
+                        sleep 5
                     """
                 }
             }
