@@ -38,5 +38,11 @@ pipeline {
         always {
             echo "here it is hii hello"
         }
+        success {
+            echo "successfully completed"
+        }
+        failure {
+            echo "failed"
+        }
     }
 }
